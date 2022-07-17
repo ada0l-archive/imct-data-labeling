@@ -66,11 +66,13 @@
             "uuid": "...",
             "labels": [
                 {
+                    "name": "cat",
                     "type": "polygon",
                     "x": [1, 2, 3],
                     "y": [1, 2, 3]
                 },
                 {
+                    "name": "dog",
                     "type": "rectangle",
                     "x": 30,
                     "y": 40,
