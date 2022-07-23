@@ -1,3 +1,3 @@
 [submodule "backend"]
 	path = backend
-	url = https://github.com/toksiki/unisersity-schedule-backend
+	url = https://github.com/ada0l/imct-data-labeling-backend
