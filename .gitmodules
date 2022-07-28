@@ -1,3 +1,4 @@
 [submodule "backend"]
 	path = backend
-	url = https://github.com/ada0l/imct-data-labeling-backend
+    url = https://github.com/ada0l/imct-data-labeling-backend
+    branch = master

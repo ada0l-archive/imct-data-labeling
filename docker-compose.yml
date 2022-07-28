@@ -9,15 +9,6 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
 
-  db_test:
-    image: postgres:11
-    ports:
-      - "5433:5433"
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-    command: -p 5433
-
   web:
     build: ./backend/
     command: bash -c "make run"
@@ -28,6 +19,7 @@ services:
       - "8000:8000"
     depends_on:
       - db_dev
+      - localstack
 
   adminer:
     image: adminer
@@ -36,3 +28,13 @@ services:
       - "5050:8080"
     depends_on:
       - db_dev
+
+  localstack:
+    image: localstack/localstack:latest
+    ports:
+      - "4566:4566"
+      - "4510-4559:4510-4559"
+    environment:
+      - SERVICES=s3
+    volumes:
+      - './docker/localstack:/docker-entrypoint-initaws.d'
