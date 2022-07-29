@@ -1,3 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
 echo "Init localstack s3"
-awslocal s3api create-bucket --bucket images
+set -x
+awslocal s3 mb s3://images
+set +x
